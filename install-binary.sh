@@ -54,7 +54,7 @@ else
             curl -sL "${SOPS_DEB_URL}" > /tmp/sops
             if [ "$(get_sha_256 /tmp/sops)" == "${SOPS_DEB_SHA}" ];
             then
-                sudo dpkg -i /tmp/sops;
+                dpkg -i /tmp/sops;
             else
                 echo -e "${RED}Wrong SHA256${NOC}"
             fi
